@@ -26,14 +26,27 @@ pip install -r requirements.txt
 ```
 
 ## Configuration
-Create a `.env` file in the root directory with the following:
+Create a config.json file in the root directory with the following:
+```{
+    "auth_method": "browser",
+    "client_id": "<your cliendid></your>",
+    "client_secret": "<your clientsecret></your>",
+    "org_id": "<your webex org id></your>",
+    "redirect_uri": "http://localhost:8089/callback",
+    "scope": "spark:kms cloud-contact-center:pod_conv cjp:user spark:people_read cjp:config cjp:config_read cjds:admin_org_read",
+    "log_level": "INFO",
+    "log_file": "transcript.log",
+    "api_urls": {
+        "base": "https://webexapis.com/v1",
+        "eu": "https://api.wxcc-eu2.cisco.com",
+        "auth": "https://webexapis.com/v1/authorize"
+    },
+    "token_file": "access_token.json",
+    "default_queue": "<your queue name></your>",
+    "url_expiration": 3600
+}
 ```
-CLIENT_ID=your_client_id
-CLIENT_SECRET=your_client_secret
-ORG_ID=your_organization_id
-REDIRECT_URI=http://localhost:8089/callback
-AUTH_CODE=your_authorization_code
-```
+
 Ensure the Webex API app is registered and authorized.
 
 ## Running the Script
